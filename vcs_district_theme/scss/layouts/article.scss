@@ -1,0 +1,78 @@
+/**
+ * article.scss
+ *
+ * Defines properties for articles.
+ */
+
+.article--banner,
+.article--image {
+  margin-bottom: 20px;
+}
+.article--dates {
+  margin-bottom: 20px;
+  .date-modified,
+  .date-published {
+    float: left;
+  }
+  .date-published:after {
+    content: "|";
+    margin: 0 5px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+.node--type-article {
+  .field--name-body {
+    h2:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+.article--more-info--header {
+  @extend .h2-layout;
+  font-size: 1.2em !important;
+  padding-top: 0 !important;
+}
+.article--media-contact,
+.article--more-info--body {
+  background-color: #eee;
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 1px 0;
+  padding: 15px;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul,
+  .fa-ul {
+    margin-bottom: 0;
+  }
+  .fas {
+    margin-right: 5px;
+  }
+  .field,
+  .field--item {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+// Breakpoints
+
+// <= Medium
+
+@media screen and (max-width: $screen-md-max) {
+  .article--dates {
+    .date-modified,
+    .date-published {
+      display: block;
+      float: none;
+    }
+  }
+  .article--more-info--body {
+    margin-bottom: 20px;
+  }
+}

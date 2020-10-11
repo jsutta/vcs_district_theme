@@ -1,0 +1,59 @@
+/**
+ * block--school-board-and-superintendent.scss
+ *
+ * Defines styles related to the School Board and Superintendent block on the
+ * District page.
+ */
+
+.container--school-board-and-superintendent {
+  .list-unstyled > li,
+  .card,
+  .card--content,
+  .field--name-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+  }
+  .list-unstyled,
+  .view-content ul li .card,
+  .view-content ul li:last-child .card {
+    margin-bottom: 0;
+  }
+  .list-unstyled {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+  .card--content ul {
+    padding-left: 0;
+    a {
+      border-bottom: 0;
+      display: inline-block;
+    }
+    li {
+      clear: both;
+      line-height: 1.5em;
+      list-style: none;
+      padding: 10px 0;
+    }
+  }
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .container--school-board-and-superintendent {
+    .list-unstyled {
+      flex-direction: column;
+    }
+    .view-content ul li .card {
+      margin-bottom: 20px;
+    }
+    .view-content ul li:last-child .card {
+      margin-bottom: 0;
+    }
+  }
+}

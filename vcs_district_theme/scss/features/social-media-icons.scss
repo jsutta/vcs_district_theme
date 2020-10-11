@@ -1,0 +1,73 @@
+/**
+ * social-media-icons.scss
+ *
+ * Defines properties used for the social media icons in the top toolbar
+ */
+
+#block-views-block-social-media-icons-block-1 {
+  display: flex;
+  flex: initial;
+  .view-content {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.social-icon {
+  font-size: 10px;
+  height: 40px;
+  line-height: 40px;
+  margin: 5px 0 5px 5px;
+  overflow: hidden;
+  padding: 5px;
+  text-align: center;
+  width: 40px;
+  a {
+    color: $white;
+  }
+  a:hover {
+    color: #222;
+  }
+  .fas {
+    line-height: 30px;
+  }
+}
+.calendar-icon,
+.fa-calendar-alt.mmenu-footer--link {
+  background-color: $link-color;
+}
+.facebook,
+.fa-facebook-f.mmenu-footer--link {
+  background-color: $facebook-primary;
+}
+.instagram,
+.fa-instagram.mmenu-footer--link {
+  background-color: $instagram-primary;
+}
+.rss,
+.fa-rss.mmenu-footer--link {
+  background-color: $rss-primary;
+}
+.twitter,
+.fa-twitter.mmenu-footer--link {
+  background-color: $twitter-primary;
+}
+.youtube,
+.fa-youtube.mmenu-footer--link {
+  background-color: $youtube-primary;
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .view-social-media-icons {
+    .view-content {
+      div:first-child {
+        .social-icon {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

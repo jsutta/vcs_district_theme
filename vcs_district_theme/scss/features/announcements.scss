@@ -1,0 +1,89 @@
+/**
+ * announcements.scss
+ *
+ * Defines styles for the the Announcements feature.
+ */
+
+.region-announcements {
+  background-color: $white;
+  .announcements-header {
+    .fa,
+    .far,
+    .fas {
+      font-size: 1.5em;
+    }
+    #announcements-label {
+      display: inline-block;
+      #announcements-label--icon,
+      .announcements-label--title {
+        vertical-align: middle;
+      }
+    }
+  }
+  .announcement {
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    overflow: auto;
+    padding: 15px;
+    .announcement-title {
+      font-weight: bold;
+    }
+    .announcement-body {
+      font-weight: normal;
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+  .announcements-toggle {
+    background-color: $text-color;
+    border: 0;
+    color: $white;
+    cursor: pointer;
+    float: right;
+    margin-top: 8px;
+    padding: 6px 10px;
+    vertical-align: middle;
+    .announcements-toggle--chevron {
+      float: right;
+      padding-left: 10px;
+    }
+    .rotate {
+      padding-left: 0;
+      padding-right: 10px;
+      transform: rotate(-180deg);
+      transition: .3s;
+    }
+    .rotate-reset {
+      padding-left: 10px;
+      padding-right: 0;
+      transform: rotate(0deg);
+      transition: .3s;
+    }
+  }
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .region-announcements {
+    .announcements-header {
+      text-align: center;
+      .announcements-toggle {
+        float: none;
+        margin: 8px auto;
+      }
+      .announcements-toggle--text--context {
+        display: none;
+      }
+    }
+    .announcement-body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

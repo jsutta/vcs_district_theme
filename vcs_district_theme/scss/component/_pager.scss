@@ -1,0 +1,69 @@
+/**
+ * Pager pagination
+ */
+
+.pager {
+  font-weight: 100;
+  list-style: none;
+  margin: 0;
+  @include clearfix;
+  li {
+    > a {
+      border-radius: 50%;
+      color: #525252;
+      font-weight: 100;
+      height: 35px;
+      line-height: 23px;
+      margin: 5px;
+      width: 35px;
+    }
+    > a:focus,
+    > a:hover {
+      background-color: $pager-hover-bg;
+      text-decoration: none;
+    }
+  }
+}
+.region-featured-pages,
+.region-top-stories {
+  .pager {
+    float: right;
+    list-style: none;
+    @include clearfix;
+    li {
+      > a {
+        background-color: $link-color;
+        border-color: $link-color;
+        border-radius: 2px;
+        color: $white;
+        display: inline-block;
+        height: 35px;
+        margin: 5px 0;
+        text-decoration: none;
+        width: 35px;
+      }
+    }
+    .previous {
+      > a,
+      > span {
+        float: none; // Overriding default of left
+      }
+    }
+    .next {
+      > a,
+      > span {
+        float: none; // Overriding default of right
+      }
+    }
+    .disabled {
+      > a,
+      > a:focus,
+      > a:hover,
+      > span {
+        background-color: $pager-bg;
+        color: $pager-disabled-color;
+        cursor: $cursor-disabled;
+      }
+    }
+  }
+}

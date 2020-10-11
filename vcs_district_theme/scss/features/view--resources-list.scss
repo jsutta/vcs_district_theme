@@ -1,0 +1,54 @@
+/**
+ * view--resources-list.scss
+ *
+ * Defines properties used for the resources feature that appears on the
+ * Students, Parents, District, Community, and Departments pages.
+ */
+
+.view-resource-links {
+  display: flex;
+  .list-cards,
+  .view-content,
+  .views-element-container {
+    width: 100%;
+    .view-content,
+    .department-listing {
+      width: 100%;
+    }
+  }
+  .view-department-list {
+    flex-direction: column;
+  }
+  .field-content,
+  .list-card,
+  .list-unstyled,
+  .views-field-nothing {
+    display: flex;
+    flex-grow: 1;
+  }
+  .list-unstyled {
+    flex-direction: row;
+    flex-wrap: wrap;
+    li:last-child {
+      flex-grow: 0;
+    }
+  }
+  .list-card {
+    align-items: stretch;
+    border-bottom: 1px solid #eee;
+    flex-direction: column;
+    padding: 15px 0;
+    width: 100%;
+    .list-card--inner {
+      display: flex;
+      flex: 1 0 auto;
+      .fontawesome-icons,
+      .fontawesome-icon {
+        float: left;
+      }
+      .fontawesome-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+}

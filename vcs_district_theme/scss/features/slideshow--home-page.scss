@@ -1,0 +1,187 @@
+/**
+ * slideshow--home-page.scss
+ *
+ * Defines properties for the home page slideshow
+ */
+
+ .region-home-page-slideshow {
+   max-height: 500px;
+   overflow: hidden;
+  .slick-dotted.slick-slider,
+  .slick-list,
+  .slick-track,
+  .slick-slide,
+  .slick-slide > div,
+  .slick__slide > article,
+  .slick__slide > article .content,
+  .slide,
+  .slide--title,
+  .field-content,
+  .views-field-nothing {
+    display: flex;
+    flex-grow: 1;
+  }
+  .field-content,
+  .slick-slide,
+  .slick__slide,
+  .slide,
+  .views-field-nothing {
+    flex-direction: column;
+  }
+  .slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+  .slick-slide {
+    flex: 1 0 auto;
+  }
+  .slick__slide {
+    display: flex !important;
+  }
+  .slide--image {
+    position: relative;
+    img {
+      max-width: none;
+    }
+    .media {
+      margin-top: 0;
+    }
+  }
+  .slide--caption {
+    cursor: auto;
+    left: 40px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    width: 90%;
+    z-index: 3;
+    .slide--body,
+    .slide--title {
+      color: $white;
+      display: block;
+      font-family: "Montserrat";
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.1;
+      margin: 0 0 10px 0;
+      padding: 0;
+      text-transform: none !important;
+      a {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+    .slide--links {
+      a {
+        color: $white;
+      }
+      .slide--link-1,
+      .slide--link-2 {
+        float: left;
+        .btn-primary {
+          color: $white;
+        }
+      }
+      .slide--link-2 {
+        margin-left: 10px;
+      }
+    }
+  }
+  .field--name-field-add-overlay,
+  .slick-slider-overlay {
+    background-color: rgba(0, 0, 0, .4);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  .slick-prev::before,
+  .slick-next::before {
+    color: $white;
+    font-family: "Font Awesome 5 Free";
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .slick-prev::before {
+    content: '\f053' !important;
+  }
+  .slick-next::before {
+    content: '\f054' !important;
+  }
+  .slick-arrow {
+    height: 40px;
+    width: 40px;
+  }
+  .slick-dots {
+    bottom: 0;
+    li,
+    .slick-active {
+      button::before {
+        color: $white;
+        opacity: 1;
+      }
+    }
+    li {
+      button::before {
+        opacity: .6;
+      }
+    }
+  }
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .region-home-page-slideshow {
+    max-height: none;
+    .slide--image {
+      max-height: 365px;
+      .img-responsive {
+        width: 100%;
+      }
+      .media {
+        min-height: 0;
+      }
+    }
+    .slick-slider-overlay {
+      display: none;
+    }
+    .slide--caption {
+      background-color: #333;
+      display: flex;
+      flex-grow: 1;
+      left: 0;
+      padding: 20px 40px 40px 40px;
+      position: relative;
+      top: auto;
+      transform: none;
+      width: 100%;
+      .slide--title,
+      .slide--body {
+        font-size: 1.4em;
+        line-height: 1.1;
+      }
+      .slide--links {
+        span {
+          display: block;
+        }
+        .slide--link-1,
+        .slide--link-2 {
+          display: inline-block;
+          float: none;
+        }
+        .slide--link-2 {
+          float: none;
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+

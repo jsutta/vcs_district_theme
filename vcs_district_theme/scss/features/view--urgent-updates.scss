@@ -1,0 +1,47 @@
+/**
+ * view--urgent-updates.scss
+ *
+ * Defines properties for the Volusia Way page.
+ */
+
+.block-views-blockurgent-updates-block-1 {
+  .h2-layout {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 20px 15px;
+    padding-top: 0;
+  }
+  .pagination {
+    margin: 0;
+  }
+  .view-urgent-updates {
+    .card,
+    .content,
+    .field-content,
+    .list-unstyled,
+    .views-field-nothing {
+      display: flex;
+    }
+    .list-unstyled {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .content {
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .card {
+      align-items: stretch;
+      flex-direction: column;
+      width: 100%;
+      .card__content,
+      .card__title {
+        display: flex;
+        flex: 1 0 auto;
+      }
+      .card__content {
+        flex-direction: column;
+      }
+    }
+  }
+}

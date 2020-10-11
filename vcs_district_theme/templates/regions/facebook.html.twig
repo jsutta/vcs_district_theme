@@ -1,0 +1,11 @@
+{# Facebook Feed - Used by social-media.html.twig #}
+{% if page.facebook %}
+  <h2 class="h2-layout">Facebook (<a href="https://www.facebook.com/VolusiaCountySchools/" target="_blank">@VolusiaCountySchools</a>)</h2>
+  <div class="card">
+    {% block facebook %}
+    <div class="card__content">
+      {{ page.facebook }}
+    </div>
+    {% endblock %}
+  </div>
+{% endif %}

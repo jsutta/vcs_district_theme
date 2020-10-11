@@ -1,0 +1,8 @@
+{# Featured Pages #}
+{% if page.featured_pages %}
+  <section class="container--featured col-md-8 col-xs-12">
+    {% block featured_pages %}
+      {{ page.featured_pages }}
+    {% endblock %}
+  </section>
+{% endif %}

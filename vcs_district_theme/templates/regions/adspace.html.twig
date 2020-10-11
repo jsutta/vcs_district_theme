@@ -1,0 +1,9 @@
+{# Ad Space #}
+{% if page.ad_space and not isMobile() %}
+  <section class="col-md-4 col-xs-12 desktop-ad-space text-center">
+    {% block ad_space %}
+      {{ page.ad_space }}
+    {% endblock %}
+    <small>Advertisement</small>
+  </section>
+{% endif %}

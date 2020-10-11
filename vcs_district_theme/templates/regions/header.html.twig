@@ -1,0 +1,64 @@
+{#
+  header.html.twig
+
+  Contains the following regions:
+  - Main Navigation
+  - Main Navigation - Mobile
+  - Search
+  - Top Toolbar
+  - Translate
+#}
+
+{%
+  set navbar_classes = [
+    'navbar',
+    theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
+    theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
+  ]
+%}
+{% set logo_sm = subtheme_directory ~ '/images/logo-sm.png' %}
+
+{# Navbars #}
+<header id="navbar" role="banner"{{ attributes.addClass(navbar_classes) }}>
+  {% block main_navigation__mobile %}
+    <div class="container-fluid container--main-navigation--mobile">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mobile-header">
+            <div class="home-link">
+              <a href="/" title="Home" rel="Home">
+                <img alt="{{ site_name|t }}" class="logo-sm" src="{{ logo_sm }}">
+              </a>
+            </div>
+            {{ page.main_navigation__mobile }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+  {# Top Toolbar #}
+  {% if page.top_toolbar %}
+    <div class="container-fluid container--top-toolbar">
+      <div class="row">
+        <div class="col-xs-12">
+          {{ page.top_toolbar }}
+        </div>
+      </div>
+    </div>
+    {# Decorative colorbar #}
+    <div class="spectar"></div>
+  {% endif %}
+  {# Main Navigation #}
+  {% if page.main_navigation %}
+    <div class="container-fluid container--navbar--main">
+      <div class="row">
+        <div class="col-xs-12">
+          {{ page.main_navigation }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</header>
+<div class="container-fluid">
+  {% include district_theme_directory ~ '/templates/regions/search-area.html.twig' %}
+</div>

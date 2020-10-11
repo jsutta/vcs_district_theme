@@ -1,0 +1,50 @@
+/**
+ * ads.scss
+ *
+ * Defines styles for the advertisements that appear in various places on
+ * the website.
+ */
+
+.desktop-ad-space {
+  margin-top: 28px;
+  padding: 0;
+}
+.region-ad-space {
+  padding: 0;
+}
+.mobile-adspace {
+  display: none;
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .desktop-ad-space {
+    display: none;
+  }
+  .region-ad-space {
+    display: none;
+  }
+  .mobile-adspace {
+    background-color: $white;
+    border-top: 1px solid $white;
+    bottom: 0;
+    display: block;
+    height: 45px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 99999;
+  }
+}
+
+// >= Extra Small and <= Small
+
+@media screen and (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
+  .desktop-ad-space {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}

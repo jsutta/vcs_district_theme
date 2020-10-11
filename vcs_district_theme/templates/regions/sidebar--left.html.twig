@@ -1,0 +1,19 @@
+{# Sidebar - Left #}
+{% if (has_filters > 0) or (has_left_sidebar > 0) %}
+  <aside class="container--left-sidebar left-aside col-md-3 col-xs-12" role="complementary">
+    {% if has_filters > 0 %}
+      {% if page.filters %}
+        {% block filters %}
+          {{ page.filters }}
+        {% endblock %}
+      {% endif %}
+    {% endif %}
+    {% if has_left_sidebar > 0 %}
+      {% if page.left_sidebar %}
+        {% block left_sidebar %}
+          {{ page.left_sidebar }}
+        {% endblock %}
+      {% endif %}
+    {% endif %}
+  </aside>
+{% endif %}

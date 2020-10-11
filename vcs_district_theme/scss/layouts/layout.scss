@@ -1,0 +1,265 @@
+/**
+ * layout.scss
+ *
+ * Defines general properties used throughout the website that are independent
+ * of specific features.
+ */
+
+h2 {
+  font-family: "Montserrat";
+  font-weight: 700;
+  margin-top: 10px;
+}
+h3 {
+  font-weight: 600;
+}
+.h2-layout,
+.menu-header {
+  color: $text-color;
+  display: block;
+  font-family: "Montserrat";
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  margin-top: 0;
+  padding: 0 0 0 20px;
+  position: relative;
+  text-transform: uppercase;
+  &:before {
+    background-color: $h2-accent-color;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 5px;
+  }
+}
+.region-content {
+  caption {
+    color: $text-color;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  h1,
+  h2,
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  h1:first-of-type {
+    margin-top: 0;
+  }
+  h4,
+  h5,
+  h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    //border-top: 1px solid #ddd;
+    font-size: 30px;
+    padding-top: 5px;
+  }
+  h2:first-child {
+    border-top: 0;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  h5 {
+    font-size: 14px;
+  }
+  h6 {
+    font-size: 12px;
+  }
+  table {
+    max-width: 100% !important;
+  }
+  table,
+  td,
+  th {
+    max-width: 100% !important;
+    padding: 10px;
+    vertical-align: top;
+    word-break: break-word;
+  }
+}
+.content-section-w {
+  background: $white;
+}
+.open {
+  display: inherit !important;
+}
+.article-date {
+  margin-left: 1.5em;
+}
+
+// Spacing for content containers
+
+.wrapper--featured-video-and-social-media,
+.wrapper--slideshow-and-calendar {
+    flex-direction: row;
+  }
+.content-container,
+.wrapper--calendar,
+.wrapper--featured-video,
+.wrapper--slideshow-and-calendar,
+.wrapper--social-media,
+.wrapper--featured-video-and-social-media {
+  display: flex;
+}
+.content-container {
+  margin-bottom: 40px;
+}
+.wrapper--featured-video,
+.wrapper--social-media {
+  flex-grow: 1;
+  .block-fb-likebox,
+  .block-twitter-block,
+  .block-views-blockfeatured-video-block-1,
+  .card,
+  .container--featured-video,
+  .container--social-media,
+  .fb_iframe_widget,
+  .fb_iframe_widget > span,
+  .fb_iframe_widget > span > iframe,
+  .form-group,
+  .region-featured-video,
+  .region-social-media__facebook,
+  .region-social-media__twitter,
+  .social-media > div,
+  .tab-content,
+  .tab-content > .active,
+  .view-featured-video,
+  .view-content,
+  .view-content > div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+  }
+  .block-fb-likebox {
+    .fb_reset {
+      flex-grow: 0;
+    }
+  }
+  .tab-content {
+    align-items: flex-start;
+  }
+  .block-fb-likebox,
+  .block-twitter-block {
+    padding: 20px 15px;
+  }
+  .twitter-timeline {
+    display: flex !important;
+    flex-grow: 1;
+  }
+  .fb_iframe_widget > span {
+    height: auto !important;
+    width: 100% !important;
+  }
+}
+.container--programs,
+.content-wrapper,
+.content-wrapper--audience-page,
+.content-wrapper--content-page {
+  margin-top: 40px;
+}
+.container--featured-video,
+.content-wrapper--content-page,
+.wrapper--slideshow-and-calendar {
+  margin-bottom: 40px;
+}
+.container--featured-video,
+.content-wrapper--content-page,
+.region-filters,
+.wrapper--slideshow-and-calendar {
+  .views-exposed-form {
+    margin-bottom: 40px;
+  }
+}
+.container--featured,
+.container--highlights,
+.container--resources,
+.container--school-board-and-superintendent,
+.container--social-media,
+.container--top-stories,
+.wrapper--district-highlights,
+.wrapper--highlights {
+  margin-bottom: 40px;
+  .block-header {
+    padding: 0 15px;
+  }
+}
+.content-section--view {
+  margin-bottom: 40px;
+}
+.content-section--view-schools {
+  margin-bottom: 20px;
+}
+.wrapper--district-highlights,
+.wrapper--main-footer,
+.wrapper--highlights {
+  width: 100%;
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .content-section--view {
+    margin-bottom: 20px;
+  }
+  .container--school-board-and-superintendent {
+    .list-unstyled {
+      flex-direction: column;
+    }
+  }
+  .wrapper--featured-video-and-social-media,
+  .wrapper--slideshow-and-calendar {
+    flex-direction: column;
+  }
+}
+
+// Small
+
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .content-section--view,
+  .content-section--view-schools {
+    margin-bottom: 40px;
+  }
+  .school-listing {
+    margin-bottom: 20px;
+  }
+}
+
+// <= Small
+
+@media screen and (max-width: $screen-sm-max) {
+  .content-container,
+  .wrapper--calendar,
+  .wrapper--slideshow-and-calendar {
+    display: block;
+  }
+  .wrapper--slideshow {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,129 @@
+/**
+ * buttons.scss
+ *
+ * Defines properties used by buttons throughout the website.
+ */
+
+#block-searchform button,
+.btn {
+  border-bottom: none !important;
+  border-radius: 2px;
+  border: none;
+  color: $white !important;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: $btn-font-weight !important;
+  line-height: 1.1;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: normal;
+  &:active,
+  &:hover {
+    background: $brand-secondary;
+    border-color: $brand-secondary;
+    color: $white;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    -webkit-transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    &:before {
+      background-color: transparent;
+    }
+  }
+}
+button.button.js-form-submit.form-submit.btn-primary.btn,
+.btn-info,
+.btn-primary {
+  background-color: $btn-primary-bg;
+  border-color: $btn-primary-border;
+}
+.btn-primary {
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}
+button.button.js-form-submit.form-submit.btn-danger.btn,
+button.button.js-form-submit.form-submit.btn-primary.btn {
+  border-style: solid;
+  border-width: 0;
+  line-height: normal;
+  padding: 10px 15px;
+  &:hover {
+    background: $brand-secondary;
+    border-color: $brand-secondary;
+    color: $white;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    -webkit-transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+}
+.form-type-search {
+  .js-form-submit {
+    padding: 8px 10px 7px;
+  }
+}
+#search-block-form button.button.js-form-submit.form-submit.btn-primary.btn {
+  padding: 9px 10px !important;
+}
+#search-block-form--mobile button.button.js-form-submit.form-submit.btn-primary.btn {
+  padding: 8px 10px 7px !important;
+}
+
+// Styling for buttons and button containers in content areas, cards, menus, and pagers
+
+.content-section a.btn,
+.content-section a.btn-primary,
+.nav-tabs li a,
+.pager li a,
+.card--content a.btn,
+.container--highlights a.btn {
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    background: $text-color;
+    border-color: $text-color;
+    color: $white;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    -webkit-transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    &:before {
+      visibility: hidden;
+    }
+  }
+}
+.wrapper--learn-more-button {
+  display: block;
+  padding-top: 10px;
+}
+
+// Focus style for buttons
+
+a.btn:focus,
+a.btn:focus,
+button.button.js-form-submit.form-submit.btn-primary.btn:focus,
+.announcements-hide:focus,
+.btn:focus,
+.btn-primary:focus,
+.card--content a.btn:focus,
+.container--highlights a.btn:focus,
+.content-section a.btn:focus,
+.content-section a.btn-primary:focus,
+.nav-tabs li a:focus,
+.pager li a:focus,
+.slide--link a:focus {
+  background-color: invert($top-toolbar--bg);
+  color: invert($link-color-light) !important;
+  outline: dotted;
+  outline-width: 2px;
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .btn {
+    font-size: 14px;
+    line-height: 10px;
+    padding: 15px !important;
+  }
+}

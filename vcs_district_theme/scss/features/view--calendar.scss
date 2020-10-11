@@ -1,0 +1,58 @@
+/**
+ * view--calendar.scss
+ *
+ * Defines properties for the District Calendar feature on the home page.
+ *
+ * Additional styles can be found in _cards.scss
+ */
+
+.wrapper--calendar {
+  flex-grow: 1;
+  .block-views-blockcalendar-calendar-block,
+  .card,
+  .container--calendar,
+  .form-group,
+  .region-calendar,
+  .view-calendar,
+  .view-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    & > div {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+  .view-footer {
+    align-items: flex-end;
+  }
+}
+.view-calendar {
+  .list-unstyled {
+    li {
+      align-items: center;
+      display: flex;
+      padding-bottom: 10px;
+      .calendar--event-date {
+        background-color: $link-color;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+        font-weight: 700;
+        height: 65px;
+        justify-content: center;
+        margin-right: 10px;
+        min-width: 65px;
+        text-align: center;
+        text-transform: uppercase;
+        user-select: none;
+        width: 65px;
+      }
+      .calendar--event-title {
+        font-size: 15px;
+        font-weight: 600;
+      }
+    }
+  }
+}

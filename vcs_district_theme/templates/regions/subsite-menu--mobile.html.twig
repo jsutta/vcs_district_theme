@@ -1,0 +1,52 @@
+{# Subsite Menu - Mobile #}
+
+{% set has_filters = page.filters|render|trim|length %}
+{% set has_left_sidebar = page.left_sidebar|render|trim|length %}
+
+{% set attributes_filters_container = create_attribute() %}
+{% set attributes_filters_button = create_attribute() %}
+
+{% if has_filters > 0 and has_left_sidebar > 0 %}
+  {% set content_width__left_sidebar = 'col-xs-6' %}
+  {% set content_width__filters = 'col-xs-6' %}
+  {% set classes__filters = [
+    'flex-end',
+  ]
+  %}
+{% else %}
+  {% set content_width__sidebar = 'col-xs-12' %}
+  {% set content_width__filters = 'col-xs-12' %}
+{% endif %}
+
+{% if has_filters > 0 %}
+  {% set classes__filter_button = [] %}
+  {%
+    set classes__filter_button = [
+      'btn',
+      'btn-primary',
+      'button--filter',
+      has_left_sidebar > 0 ? 'flex-end',
+    ]
+  %}
+{% endif %}
+
+<div class="container-fluid mobile-toolbar">
+  <div class="row">
+    {% if has_left_sidebar > 0 %}
+      <div class="container--page-menu {{ content_width__left_sidebar }}">
+        <button class="btn-primary btn button--page-menu" type="button">
+          <span class="fas fa-bars"></span>
+          Page Menu
+        </button>
+      </div>
+    {% endif %}
+    {% if has_filters > 0 %}
+      <div{{ attributes_filters_container.addClass('container--filter-button', content_width__filters, classes__filters) }}>
+        <button type="button"{{ content_attributes.addClass(classes__filter_button) }}>
+          <span class="fas fa-filter"></span>
+          Filter
+        </button>
+      </div>
+    {% endif %}
+  </div>
+</div>

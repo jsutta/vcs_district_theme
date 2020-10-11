@@ -1,0 +1,30 @@
+/**
+ * slideshow--district-programs.scss
+ *
+ * Defines styles for the District Programs slideshow that appears at the
+ * bottom of the audience pages.
+ */
+
+.region-programs {
+  .slick {
+    background: none;
+    border-bottom: 0;
+    height: auto;
+    max-height: none;
+  }
+  .slick-slider {
+    max-height: none;
+  }
+  .slick-list {
+    max-height: none;
+  }
+  .slide--link {
+    border: 0;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

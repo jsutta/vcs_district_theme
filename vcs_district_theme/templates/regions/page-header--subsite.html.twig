@@ -1,0 +1,15 @@
+{# Page Header - Subsites #}
+<div class="container-fluid subsite-header">
+  <div class="row">
+    {% if page.subsite_header %}
+      {% block subsite_header %}
+        {{ page.subsite_header }}
+      {% endblock %}
+    {% endif %}
+  </div>
+</div>
+{% if page.breadcrumbs %}
+  {% block breadcrumbs %}
+    {{ page.breadcrumbs }}
+  {% endblock %}
+{% endif %}

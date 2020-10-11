@@ -1,0 +1,15 @@
+{# Page Header - Basic pages #}
+<div class="container-fluid subsite-header">
+  <div class="row">
+    {% if page.page_header %}
+      {% block page_header %}
+        {{ page.page_header }}
+      {% endblock %}
+    {% endif %}
+  </div>
+</div>
+{% if page.breadcrumbs %}
+  {% block breadcrumbs %}
+    {{ page.breadcrumbs }}
+  {% endblock %}
+{% endif %}

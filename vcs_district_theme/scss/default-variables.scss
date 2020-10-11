@@ -1,0 +1,106 @@
+/**
+ * Default Variables.
+ *
+ * Modify this file to provide default Bootstrap Framework variables. The
+ * Bootstrap Framework will not override any variables defined here because it
+ * uses the `!default` flag which will only set their default if not already
+ * defined here.
+ *
+ * You can copy existing variables directly from the following file:
+ * ./libraries/bootstrap/assets/stylesheets/bootstrap/_variables.scss
+ *
+ * Scaffolding
+ *
+ * Settings for some of the most global styles.
+ * Background color for `<body>`
+ */
+
+$body-bg: #f9f9f9;
+$text-color: #333;
+
+// Breakpoints
+$screen-lg-min: 1200px;
+$screen-md-max: 1199px;
+$screen-md-min: 992px;
+$screen-sm-max: 991px;
+$screen-sm-min: 768px;
+$screen-xs-max: 767px;
+
+// Brand colors can be found in the theme-variables.scss file.
+
+// Other colors
+$top-toolbar--bg: #222;
+$white: #fff;
+
+// Color adjustments for various effects
+$brand-primary--opacity-100: rgba(114, 163, 65, 1);
+$brand-primary--opacity-60: rgba(114, 163, 65, 0.6);
+$brand-primary-darker: scale-color($brand-primary, $lightness: -20%);
+$top-toolbar--bg-hover: scale-color($top-toolbar--bg, $lightness: 10%);
+$main-menu--bg-hover: scale-color($brand-primary, $lightness: 90%);
+
+/**
+ * Typography
+ *
+ * Font, line-height, and color for body text, headings, and more
+ */
+
+// Imported fonts and libraries
+@import url('//fonts.googleapis.com/css?family=Open+Sans');
+@import url('//fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900');
+
+// Glyphicon font path
+$icon-font-path: '../../../../libraries/bootstrap/assets/fonts/bootstrap/';
+
+// Fonts and font sizes
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-size-base: 14px;
+$font-size-large: ceil(($font-size-base * 1.25)); // ~18px
+$font-size-small: ceil(($font-size-base * 0.85)); // ~12px
+$font-size-h1: 2em; // floor(($font-size-base * 1.5)); // ~36px
+$font-size-h2: 1.4em; // floor(($font-size-base * 1)); // ~30px
+$font-size-h3: 1.2em; //ceil(($font-size-base * 1)); // ~24px
+$font-size-h4: 1em; // ceil(($font-size-base * 1)); // ~18px
+$font-size-h5: $font-size-base;
+$font-size-h6: ceil(($font-size-base * 0.85)); // ~12px
+
+// Link colors
+$link-color: scale-color($brand-primary, $lightness: -20%);
+$link-color-lighter: scale-color($link-color, $lightness: 15%);
+$link-color-darker: scale-color($link-color, $lightness: -15%);
+$link-color-light: $white;
+$link-color-light-darker: scale-color($link-color-light, $lightness: -15%);
+
+/**
+ * Accent colors
+ *
+ * For accent items used to decorate elements
+ */
+
+$h2-accent-color: #ed1c24;
+
+/**
+ * Buttons
+ *
+ * For each of Bootstrap's buttons, define text, background and border color
+ */
+
+$btn-font-weight: bold;
+$btn-primary-bg: $link-color;
+$btn-primary-border: $link-color;
+
+/**
+ * Tables
+ */
+
+$table-bg-accent: #f1f1f1 !default;
+
+/**
+ * Social media colors
+ */
+
+$facebook-primary: #4267b2;
+$instagram-primary: #e1306c;
+$rss-primary: #ffa500;
+$twitter-primary: #1da1f2;
+$youtube-primary: #ff0000;

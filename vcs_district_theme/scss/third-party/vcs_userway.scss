@@ -1,0 +1,24 @@
+/**
+ * userway.scss
+ *
+ * Defines properties for the Userway widget.
+ */
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  body .userway.userway_p3,
+  body .userway.userway_p4,
+  body .userway.userway_p4.userway_hidden.userway_over,
+  body .userway.userway_p5 {
+    bottom: 46px !important;
+  }
+  body .userway.userway-the-big.userway_p3,
+  body .userway.userway-the-big.userway_p4,
+  body .userway.userway-the-big.userway_p4.userway_hidden.userway_over,
+  body .userway.userway-the-big.userway_p5 {
+    bottom: 70px !important;
+  }
+}

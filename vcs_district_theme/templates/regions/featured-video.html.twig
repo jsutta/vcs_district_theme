@@ -1,0 +1,10 @@
+{# Featured Video #}
+{% if page.featured_video %}
+  <section class="wrapper--featured-video col-md-8 col-sm-6 col-xs-12">
+    <div class="container--featured-video">
+      {% block featured_video %}
+        {{ page.featured_video }}
+      {% endblock %}
+    </div>
+  </section>
+{% endif %}

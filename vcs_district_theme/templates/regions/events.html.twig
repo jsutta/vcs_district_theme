@@ -1,0 +1,10 @@
+{% if page.events %}
+  <h2 class="h2-layout">Upcoming Events</h2>
+  <div class="card">
+    {% block events %}
+      <div class="card__content">
+        {{ page.events }}
+      </div>
+    {% endblock %}
+  </div>
+{% endif %}

@@ -1,0 +1,19 @@
+/**
+ * article-tags.scss
+ *
+ * Defines styles for to the article tags feature.
+ */
+
+.view-school-maps {
+  .view-header {
+    border-bottom: 1px solid #eee;
+    margin: 0 0 30px 0;
+    h2 {
+      margin: 0;
+      padding: 0 0 10px 0;
+    }
+  }
+  .views-row > div {
+    padding-bottom: 30px;
+  }
+}

@@ -1,0 +1,55 @@
+framework:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/theme_scripts.js: {}
+    # js/livehelpnow.js: {}
+  dependencies:
+    - core/jquery
+    - district_theme/bootstrap
+
+animate:
+  css:
+    theme:
+      ./../../../libraries/animate/animate.css: {}
+
+bootstrap:
+  js:
+    ./../../../libraries/bootstrap/assets/javascripts/bootstrap.min.js: {minified: true}
+
+# bs-slider:
+#   js:
+#     ./../../../libraries/bs-touch-slider/jquery.touchSwipe.js: {}
+#     ./../../../libraries/bs-touch-slider/bootstrap-touch-slider.js: {}
+
+countUp.js:
+  js:
+    ./../../../libraries/countUp.js/dist/countUp.min.js: {attributes: {type: module}}
+    ./../../../libraries/countUp.js/dist/countUp.jquery.js: {attributes: {type: module}}
+    js/count_up.js: {attributes: {type: module}}
+  dependencies:
+    - core/jquery
+
+google-adsense:
+  header: true
+  js:
+    //pagead2.googlesyndication.com/pagead/js/adsbygoogle.js: {type: external, attributes: {async: true, data-ad-client: ca-pub-4073749340757254}}
+
+google-cse:
+  js:
+    //cse.google.com/cse.js?cx=011362895879466480802:eatlogojomg: {type: external, attributes: {async: true}}
+
+masonry-js:
+  js:
+    //unpkg.com/masonry-layout@4/dist/masonry.pkgd.js: {type: external, minified: false, attributes: {async: true}}
+
+monsido:
+  js:
+    //app-script.monsido.com/v2/monsido-script.js: {type: external, minified: true, attributes: {async: true}}
+    js/monsido.js: {}
+
+userway:
+  js:
+    js/userway.js: {}
+    //cdn.userway.org/widget.js: {type: external, minified: true, attributes: {async: true}}

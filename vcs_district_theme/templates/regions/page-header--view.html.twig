@@ -1,0 +1,16 @@
+{# Page Header - Views pages #}
+<div class="container-fluid page-header--view">
+  <div class="row">
+    <div class="page-header--view--banner">
+      <img src="/sites/default/files/global-images/page-header-default_0.jpg" alt="" title="" typeof="foaf:Image" class="img-responsive">
+    </div>
+    <div class="container">
+      <h1 class="subsite-header--name">{{ page['#title'] }}</h1>
+    </div>
+  </div>
+</div>
+{% if page.breadcrumbs %}
+  {% block breadcrumbs %}
+    {{ page.breadcrumbs }}
+  {% endblock %}
+{% endif %}

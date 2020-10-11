@@ -1,0 +1,54 @@
+{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+{% set has_additional_info = page.additional_info|render|trim|length %}
+
+{% if (node.field_article_type.0.target_id == 19 or node.field_article_type.0.target_id == 20) %}
+  {% set is_event_or_news = true %}
+{% else %}
+  {% set is_event_or_news = false %}
+{% endif %}
+
+{% if has_additional_info > 0 %}
+  {% set content_width = 'col-lg-9 col-xs-12' %}
+{% else %}
+  {% set content_width = 'col-xs-12' %}
+{% endif %}
+
+{# Announcements #}
+{% include district_theme_directory ~ '/templates/regions/announcements.html.twig' %}
+{# Main header #}
+{% include district_theme_directory ~ '/templates/regions/header.html.twig' %}
+{# Page header #}
+{% include district_theme_directory ~ '/templates/regions/page-header--subsite.html.twig' %}
+{# Mobile toolbar #}
+{% include district_theme_directory ~ '/templates/regions/subsite-menu--mobile.html.twig' %}
+
+{# Main #}
+<div role="main" class="{{ container }} content-wrapper--content-page main-container js-quickedit-main-content">
+  <div class="row">
+    <div class="col-xs-12 links--back">
+      {% if is_event_or_news == true %}
+        <p><a href="/newsroom"><span class="fas fa-angle-double-left"></span> <span class="link-text">Back to Newsroom</span></a></p>
+        <hr>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row">
+    {# Content #}
+    <section class="{{ content_width }}">
+      {% block content %}
+        <a id="main-content"></a>
+        {{ page.content }}
+      {% endblock %}
+      {% if page.content_views %}
+        {% block content_views %}
+          {{ page.content_views }}
+        {% endblock %}
+      {% endif %}
+    </section>
+    {# Sidebar - Right #}
+    {% include district_theme_directory ~ '/templates/regions/sidebar--right.html.twig' %}
+  </div>
+</div>
+
+{# Footer #}
+{% include district_theme_directory ~ '/templates/regions/footer.html.twig' %}

@@ -1,0 +1,34 @@
+/**
+ * ckeditor.scss
+ *
+ * Defines properties used by the CKEditor.
+ */
+
+.ckeditor-accordion-container > dl dt.active > a,
+.ckeditor-accordion-container > dl dt > a,
+.ckeditor-accordion-container > dl dt > a:active,
+.ckeditor-accordion-container > dl dt > a:focus,
+.ckeditor-accordion-container > dl dt > a:visited {
+  background-color: $link-color;
+  color: $white;
+}
+.ckeditor-accordion-container > dl dt.active,
+.ckeditor-accordion-container > dl dt.active > a {
+  background-color: #00a5ef;
+  color: $white;
+}
+.ckeditor-accordion-container > dl {
+  border: 1px solid $link-color;
+}
+.ckeditor-accordion-container > dl dd {
+  padding: 15px;
+}
+.ckeditor-accordion-container > dl table {
+  border-top: 0;
+}
+
+/* Align center data. Center attribute in the CKeditor was not working without adding this additional CSS */
+
+.align-center img {
+  margin: 0 auto;
+}

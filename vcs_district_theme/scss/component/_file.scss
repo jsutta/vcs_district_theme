@@ -1,0 +1,98 @@
+/**
+ * File (and Image Widget) styles.
+ */
+
+.file {
+  display: table;
+  font-size: 75%;
+  font-weight: 700;
+  margin: 5px 0;
+  width: 100%;
+  > span {
+    background: $white;
+    border-bottom: 1px solid $input-border;
+    border-top: 1px solid $input-border;
+    color: $brand-primary;
+    &:first-child {
+      border-left: 1px solid $input-border;
+    }
+    &:last-child {
+      border-right: 1px solid $input-border;
+    }
+  }
+  > .tabledrag-changed {
+    &, &:last-child {
+      border: 1px solid darken($alert-warning-border, 5%);
+    }
+    background: $alert-warning-bg;
+    border-left: 1px solid inherit;
+    border-radius: 0;
+    color: $alert-warning-text;
+    display: table-cell;
+    padding: 0 1em;
+    top: 0;
+    vertical-align: middle;
+  }
+}
+.file-icon {
+  display: table-cell;
+  font-size: 150%;
+  padding: .25em .5em;
+  text-align: center;
+  vertical-align: middle;
+}
+.file-link {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  a,
+  a:active,
+  a:focus,
+  a:hover {
+    color: inherit;
+  }
+}
+.file-size {
+  display: table-cell;
+  padding: 0 1em;
+  text-align: right;
+  vertical-align: middle;
+  white-space: pre;
+}
+.image-widget.row {
+  overflow: hidden;
+}
+
+/* Custom embedded media styles */
+
+.vcs-embedded-media {
+  .file {
+    display: block;
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0;
+    width: 100%;
+    > span {
+      background: transparent;
+      border-bottom: 0;
+      border-top: 0;
+      color: $brand-primary;
+      &:first-child {
+        border-left: 0;
+      }
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+  .file-icon {
+    font-size: 75%;
+    padding: 0 5px 0 0;
+    .icon {
+      color: $text-color !important;
+    }
+  }
+  .file-link {
+    width: auto;
+  }
+}

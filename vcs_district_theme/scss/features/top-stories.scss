@@ -1,0 +1,75 @@
+/**
+ * top-stories.scss
+ *
+ * Defines properties for the Top Stories feature.
+ */
+
+.region-top-stories {
+  .list-unstyled,
+  .view-content ul li .card,
+  .view-content ul li:last-child .card {
+    margin-bottom: 0;
+  }
+  .card,
+  .list-unstyled,
+  .list-unstyled > li,
+  .view-footer--top-stories,
+  .view-footer--top-stories--footer,
+  .view-footer--top-stories--pager {
+    display: flex;
+  }
+  .list-unstyled {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .list-unstyled > li {
+    justify-content: center;
+  }
+  .view-footer--top-stories {
+    margin-top: 20px;
+    .view-footer--top-stories--footer {
+      align-items: center;
+      flex: 1 0 auto;
+      a {
+        font-weight: bold;
+        margin: 0;
+        text-transform: uppercase;
+      }
+    }
+    .view-footer--top-stories--pager {
+      justify-content: flex-end;
+    }
+  }
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .region-top-stories {
+    .list-unstyled > li {
+      margin-bottom: 20px;
+    }
+    .list-unstyled > li:nth-child(3) {
+      margin-bottom: 20px;
+    }
+    .list-unstyled > li:nth-child(4) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// >= Extra Small and <= Small
+
+@media screen and (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
+  .region-top-stories {
+    .list-unstyled > li {
+      margin-bottom: 20px;
+    }
+    .list-unstyled > li:nth-child(3),
+    .list-unstyled > li:nth-child(4) {
+      margin-bottom: 0;
+    }
+  }
+}

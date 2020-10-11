@@ -1,0 +1,32 @@
+/**
+ * view--construction-bids.scss
+ *
+ * Defines properties for the construction bids feature used by the Design
+ * and Construction department.
+ */
+
+#views-exposed-form-project-bids-documents-block-1 {
+  margin: 50px 0px;
+}
+.view-project-bids-documents {
+  table th {
+    background-color: $link-color;
+    color: $white;
+  }
+  table tbody td:nth-child(1) {
+    width: 150px;
+  }
+  table tbody td:nth-child(2),
+  table tbody td:nth-child(3) {
+    width: 91px;
+  }
+  table tbody td:nth-child(4) {
+    width: 288px;
+  }
+  table tbody td:nth-child(5) {
+    width: 125px;
+  }
+  table tbody td:nth-child(6) {
+    width: 102px;
+  }
+}

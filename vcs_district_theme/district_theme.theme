@@ -1,0 +1,171 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Menu\MenuLinkInterface;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\views\Views;
+
+/**
+ * Shows suggestions for custom page layouts in twig debug. Use dev tools
+ * to find suggested layouts.
+ *
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * @param $suggestions
+ * @param $variables
+ */
+
+function district_theme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Show the maintenance page if the website is in maintenance mode.
+  if (\Drupal::state()->get('system.maintenance_mode')){
+    $suggestions[] = 'html__maintenance';
+  }
+
+  // Show suggestions for custom page layouts in twig debug. Use dev tools to
+  // find suggested layouts.
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__' . $content_type;
+  }
+
+  // Show suggestions to customize taxonomy page layouts
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' &&
+      $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
+    $term = Term::load($tid);
+    $suggestions[] = 'page__taxonomy__' . $term->getVocabularyId();
+  }
+}
+
+/**
+ * Alters various forms.
+ *
+ * Implements hook_form_alter
+ *
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
+
+function district_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Changes the search form's input field's title. Also changes the value of
+  // the search form's submit button value.
+  if ($form_id == 'search_block_form' || $form_id == 'search_form') {
+    $form['keys']['#title'] = t('Search this Website');
+    $form['keys']['#placeholder'] = t('');
+    $form['actions']['submit']['#value'] = t('Search');
+  }
+  // Changes the exposed form's submit button value.
+  if ($form_id == 'views_exposed_form') {
+    $form['actions']['submit']['#value'] = t('Apply Filter');
+  }
+}
+
+function generateSubMenuTree(&$output, &$input, $parent = FALSE) {
+  $input = array_values($input);
+  foreach($input as $key => $item) {
+    // If menu element disabled skip this branch
+    if ($item->link->isEnabled()) {
+      $key = 'submenu-' . $key;
+      $name = $item->link->getTitle();
+      $url = $item->link->getUrlObject();
+      $url_string = $url->toString();
+
+      // If not root element, add as child
+      if ($parent === FALSE) {
+        $output[$key] = [
+          'name' => $name,
+          'tid' => $key,
+          'url_str' => $url_string
+        ];
+      } else {
+        $parent = 'submenu-' . $parent;
+        $output['child'][$key] = [
+          'name' => $name,
+          'tid' => $key,
+          'url_str' => $url_string
+        ];
+      }
+
+      if ($item->hasChildren) {
+        if ($item->depth == 1) {
+          generateSubMenuTree($output[$key], $item->subtree, $key);
+        } else {
+          generateSubMenuTree($output['child'][$key], $item->subtree, $key);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Alters the mobile menu.
+ *
+ * Implements hook_preprocess_page().
+ */
+function district_theme_preprocess_page(&$variables) {
+  $view = Views::getView('social_media_icons');
+  if ($view) {
+    $view->setDisplay('block_1');
+    $view->execute();
+
+    $social_media_channels = null;
+    $i = 0;
+
+    foreach ($view->result as $data) {
+      $entity = $data->_entity;
+      $social_media_icon__icon_name = $entity->get('field_social_media_icon')->icon_name;
+      $social_media_icon__style = $entity->get('field_social_media_icon')->style;
+      $social_media_url = $entity->get('field_social_media_url')->value;
+      $social_media_channels[$i] = "<a class='{$social_media_icon__style} fa-{$social_media_icon__icon_name} mmenu-footer--link' href='{$social_media_url}' target='_blank'></a>";
+      $i++;
+    }
+    $variables['#attached']['drupalSettings']['responsive_menu']['custom'] = [
+      'options' => [
+        'navbars' => [
+          [
+            'position' => 'bottom',
+            'content' => $social_media_channels,
+          ],
+          [
+            'position' => 'top',
+            'content' => [
+              '<div class="search-block-form contextual-region block block-search block-search-form-block" data-drupal-selector="search-block-form" role="search">
+                <div data-contextual-id="block:block=searchform:langcode=en"></div>
+                <form action="/search/google" method="get" id="search-block-form--mobile" accept-charset="UTF-8">
+                  <div class="form-item js-form-item form-type-search js-form-type-search form-item-keys js-form-item-keys form-no-label form-group">
+                    <label for="edit-keys" class="control-label sr-only">Search this Website</label>
+                    <div class="input-group">
+                      <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" class="form-search form-control" placeholder="" type="search" id="edit-keys--mobile" name="keys" value="" size="15" maxlength="128" data-toggle="tooltip" />
+                      <span class="input-group-btn">
+                        <button type="submit" value="Search" class="button js-form-submit form-submit btn-primary btn" name="">
+                          Search
+                          <span class="sr-only">Search</span>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-actions form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"></div>
+                </form>
+              </div>'
+            ]
+          ]
+        ],
+      ],
+    ];
+  }
+}
+
+/**
+ * Prepares global variables for all templates.
+ * Code obtained from https://www.drupal.org/project/drupal/issues/3049414
+ */
+function district_theme_preprocess(&$variables) {
+  $theme_handler = \Drupal::service('theme_handler');
+  $subtheme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  $site_config_handler = \Drupal::config('system.site');
+  $variables['district_theme_directory'] = $theme_handler->getTheme('district_theme')->getPath();
+  $variables['subtheme_directory'] = $theme_handler->getTheme($subtheme)->getPath();
+  $variables['site_name'] = $site_config_handler->get('name');
+  $variables['site_slogan'] = $site_config_handler->get('slogan');
+}

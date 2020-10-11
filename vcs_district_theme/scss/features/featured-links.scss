@@ -1,0 +1,44 @@
+/**
+ * featured-links.scss
+ *
+ * Defines properties for the Featured section on the audience pages.
+ */
+
+.region-featured-pages {
+  .card,
+  .list-unstyled,
+  .list-unstyled li {
+    display: flex;
+  }
+  .list-unstyled {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .list-unstyled,
+  .view-content ul li .card,
+  .view-content ul li:last-child .card {
+    margin-bottom: 0;
+  }
+  .card {
+    .field--name-field-featured-link {
+      @extend .btn;
+      @extend .btn-primary;
+      padding: 15px;
+    }
+  }
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .region-featured-pages {
+    .view-content ul li .card {
+      margin-bottom: 20px;
+    }
+    .view-content ul li:last-child .card {
+      margin-bottom: 0;
+    }
+  }
+}

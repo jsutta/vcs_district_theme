@@ -1,0 +1,86 @@
+/**
+ * style.scss
+ *
+ * The main stylesheet
+ */
+
+// Theme variables
+@import 'theme-variables';
+
+// Default variables
+@import 'default-variables';
+
+// Bootstrap framework
+@import './../../../../libraries/bootstrap/assets/stylesheets/bootstrap';
+
+// Bootstrap components
+
+@import "component/mixins";
+@import "component/alert";
+@import "component/ajax";
+@import "component/cards";
+@import "component/field";
+@import "component/file";
+@import "component/filter";
+@import "component/form";
+@import "component/icon";
+@import "component/node";
+@import "component/panel";
+@import "component/progress-bar";
+@import "component/table-drag";
+@import "component/tabs";
+@import "component/pager";
+
+// jQuery UI
+
+@import "jquery-ui/autocomplete";
+
+// Layouts
+
+@import "layouts/article";
+@import "layouts/department-home-page";
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/layout";
+
+// Features
+
+@import "features/ads";
+@import "features/announcements";
+@import "features/breadcrumbs";
+@import "features/buttons";
+@import "features/featured-links";
+@import "features/featured-video";
+@import "features/form";
+@import "features/highlights";
+@import "features/links";
+@import "features/mobile-toolbar";
+@import "features/school-board-and-superintendent";
+@import "features/search";
+@import "features/sidebars";
+@import "features/slideshow--district-programs";
+@import "features/slideshow--home-page";
+@import "features/social-media-feeds";
+@import "features/social-media-icons";
+@import "features/top-stories";
+@import "features/view--article-tags";
+@import "features/view--articles-by-tag-name";
+@import "features/view--calendar";
+@import "features/view--construction-bids";
+@import "features/view--department-list";
+@import "features/view--newsroom";
+@import "features/view--resources-list";
+@import "features/view--school-maps";
+@import "features/view--schools";
+@import "features/view--the-volusia-way";
+@import "features/view--urgent-updates";
+
+// Third-party tools
+
+@import "third-party/ckeditor";
+@import "third-party/vcs_livehelpnow";
+@import "third-party/vcs_mobile-menu";
+@import "third-party/vcs_userway";
+
+// Base-theme overrides
+@import 'overrides';

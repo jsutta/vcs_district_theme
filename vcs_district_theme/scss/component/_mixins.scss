@@ -1,0 +1,54 @@
+/**
+ * Mixins.scss
+ */
+
+@mixin box-shadow {
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s linear 0s;
+  -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.3s linear 0s;
+  &:hover{
+    box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+@mixin transitions {
+  transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  -webkit-transition: all 0.3s linear 0s;
+}
+@mixin dark-overlay($background-color) {
+  background-color: $background-color;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+// Round buttons
+
+@mixin btn-circle-xl {
+  border-radius: 35px;
+  font-size: 24px;
+  height: 65px;
+  line-height: 1.33;
+  padding: 10px 16px;
+  width: 65px;
+}
+@mixin btn-circle {
+  border-radius: 15px;
+  font-size: 12px;
+  height: 30px;
+  line-height: 1.42857;
+  padding: 6px 0px;
+  text-align: center;
+  width: 30px;
+}

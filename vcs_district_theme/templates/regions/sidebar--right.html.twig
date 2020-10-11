@@ -1,0 +1,8 @@
+{# Sidebar - Right #}
+{% if has_additional_info > 0 %}
+  <aside class="col-md-3 col-xs-12">
+    {% block additional_info %}
+      {{ page.additional_info }}
+    {% endblock %}
+  </aside>
+{% endif %}

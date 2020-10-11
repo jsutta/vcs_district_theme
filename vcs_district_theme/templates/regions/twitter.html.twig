@@ -1,0 +1,11 @@
+{# Twitter Feed - Used by social-media.html.twig #}
+{% if page.twitter %}
+  <h2 class="h2-layout">Twitter (<a href="https://twitter.com/volusiaschools" target="_blank">@VolusiaSchools</a>)</h2>
+  <div class="card">
+    {% block twitter %}
+      <div class="card__content">
+        {{ page.twitter }}
+      </div>
+    {% endblock %}
+  </div>
+{% endif %}

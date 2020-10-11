@@ -1,0 +1,28 @@
+/**
+ * livehelpnow.scss
+ *
+ * Defines properties for the LiveHelpNow chat widget.
+ */
+
+div#lhnHocButton div.lhnHocChatBtn,
+div#lhnHocButton div.lhnHocChatBtnCont,
+#lhnHelpOutCenter div.lhnWindow-header {
+  background-color: $brand-primary;
+}
+#lhnHelpOutCenter button.form_submit,
+#lhnHelpOutCenter button.lhnFormButton,
+#lhnHelpOutCenter button.form_submit:hover,
+#lhnHelpOutCenter button.lhnFormButton:hover {
+  background-color: $link-color;
+}
+#lhnHelpOutCenter button.form_submit,
+#lhnHelpOutCenter button.lhnFormButton {
+  float: left;
+}
+#lhnHelpOutCenter div.lhnWindow-header button.lhnWindow-header-closer,
+#lhnHelpOutCenter div.lhnWindow-header button.lhnWindow-header-minimizer {
+  margin-top: 0;
+}
+#lhnHelpOutCenter label.lhnLabel {
+  text-transform: none;
+}

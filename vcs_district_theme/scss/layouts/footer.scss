@@ -1,0 +1,118 @@
+/**
+ * footer.scss
+ *
+ * Defines properties for the website's footer.
+ */
+
+.wrapper--main-footer {
+  background: url("./../../district_theme/images/footer-bg.jpg") no-repeat left top fixed;
+  position: relative;
+  z-index: 1;
+  &:before {
+    @include dark-overlay(rgba(34, 34, 34, 0.9));
+    content: "";
+    z-index: -1;
+  }
+}
+.main-footer {
+  z-index: 1;
+  padding: 40px 0;
+  a,
+  a:hover {
+    color: $white;
+    text-decoration: none;
+  }
+  li a:hover {
+    background-color: transparent;
+    color: $white;
+  }
+  p {
+    color: $white;
+  }
+  #block-financialtransparency {
+    .footer-menu {
+      margin-bottom: 10px;
+    }
+  }
+  .region-footer {
+    #transparency-florida-link {
+      display: inline-block;
+    }
+    .h2-layout,
+    .menu-header {
+      color: $white;
+      display: block;
+    }
+    .container--contact-info {
+      color: $white;
+    }
+    .fa-ul {
+      margin: 0;
+    }
+    .fa-ul > li {
+      display: flex;
+      .fa-li {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        left: auto;
+        margin-right: 5px;
+        position: inherit;
+        width: auto;
+      }
+    }
+    .fa-ul > li > a,
+    .nav > li > a {
+      display: block;
+      margin: 10px 0;
+      padding: 0;
+    }
+    .fa-ul > li:last-child > a,
+    .nav > li:last-child > a {
+      margin: 10px 0 0;
+    }
+    .nav--financial-transparency > li:last-child > a {
+      margin: 10px 0;
+    }
+  }
+}
+.footer-copyright {
+  background-color: #222;
+  color: $white;
+  padding: 10px 0;
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .wrapper--main-footer {
+    background: none;
+  }
+  .footer {
+    padding: 0 0 45px 0;
+  }
+}
+
+// <= Medium
+
+@media screen and (max-width: $screen-md-max) {
+  .main-footer {
+    nav,
+    .contact-information {
+      margin-top: 40px;
+    }
+    #block-financialtransparency {
+      text-align: center;
+      .footer-menu {
+        margin-bottom: 10px;
+      }
+    }
+    .menu {
+      li {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+/**
+ * form.scss
+ *
+ * Defines properties used on forms.
+ */
+
+.user-login-form,
+.views-exposed-form {
+  input,
+  select,
+  textarea,
+  .form-checkboxes {
+    margin: 0 0 10px 0;
+  }
+  .control-label {
+    .form-checkbox {
+      margin-right: 5px;
+    }
+  }
+}
+.form-group {
+  margin: 0;
+}
+.webform-submission-form {
+  .form-item {
+    margin-bottom: 10px;
+  }
+  .form-actions {
+    margin-bottom: 0;
+  }
+}
+
+// Breakpoints
+
+// <= Small
+
+@media screen and (max-width: $screen-sm-max) {
+  #block-exposedformtogglebutton--2 {
+    .field--name-body {
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .bef-exposed-form .form--inline > .form-item {
+    float: none;
+  }
+  .region-left-sidebar {
+    margin-bottom: 25px;
+    .views-exposed-form {
+      display: none;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// <= Medium
+
+@media screen and (max-width: $screen-md-max) {
+  .views-exposed-form {
+    display: none;
+  }
+}

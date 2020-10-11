@@ -1,0 +1,40 @@
+/**
+ * breadcrumbs.scss
+ *
+ * Defines styles for the breadcrumbs feature.
+ */
+
+.breadcrumb-container {
+  background-color: $brand-primary;
+  padding: 0;
+  width: 100%;
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .breadcrumb {
+    background-color: $brand-primary-darker;
+    border-radius: 0;
+    color: $white;
+    display: inline;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 10px 15px 10px;
+    > li + li:before,
+    .active {
+      color: $white;
+    }
+  }
+}
+
+// Breakpoints
+
+// <= Medium
+
+@media screen and (max-width: $screen-md-max) {
+  .breadcrumb-container {
+    display: none;
+  }
+}

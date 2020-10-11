@@ -1,0 +1,50 @@
+/**
+ * social-media-feeds.scss
+ *
+ * Defines properties for the social media feeds feature on the home page.
+ */
+
+.social-media {
+  .nav-tabs {
+    border-bottom: 0;
+    > li {
+      margin-bottom: 0;
+      width: 50%;
+    }
+    li.nav-tab--facebook.active > a:focus,
+    li.nav-tab--facebook.active > a:hover,
+    .nav-tab--facebook a {
+      background-color: $facebook-primary;
+    }
+    li.nav-tab--twitter.active > a:focus,
+    li.nav-tab--twitter.active > a:hover,
+    .nav-tab--twitter a {
+      background-color: $twitter-primary;
+    }
+    .nav-tab--facebook a,
+    .nav-tab--twitter a,
+    .nav-tab--facebook a:active,
+    .nav-tab--twitter a:active,
+    .nav-tab--facebook a:hover,
+    .nav-tab--twitter a:hover,
+    li.active > a,
+    li.active > a:focus,
+    li.active > a:hover {
+      border: 0;
+      border-radius: 0;
+      color: $white;
+      cursor: pointer;
+      font-weight: bold;
+      margin-right: 0;
+      margin-top: 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+  #block-fblikebox,
+  #block-twitterblock {
+    height: 515px;
+    overflow: hidden;
+    text-align: center;
+  }
+}

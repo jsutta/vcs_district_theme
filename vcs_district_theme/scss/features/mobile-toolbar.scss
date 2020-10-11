@@ -1,0 +1,75 @@
+/**
+ * mobile-tooolbar.scss
+ *
+ * Defines properties for the mobile toolbar that appears below the banner.
+ */
+
+// Breakpoints
+
+// <= Medium
+
+@media screen and (max-width: $screen-md-max) {
+  #block-exposedformtogglebutton--2 {
+    display: block;
+  }
+  .mobile-toolbar {
+    background-color: $brand-primary;
+    display: flex;
+    max-height: 50px;
+    .container--page-menu,
+    .container--filter-button,
+    & > .row {
+      display: flex;
+      flex: 1 0 auto;
+    }
+    .container--filter-button {
+      #block-exposedformtogglebutton--2,
+      .fas,
+      .field--name-body,
+      .field--name-body > p,
+      .button--filter,
+      .region-filter-button {
+        display: flex;
+      }
+      .field--name-body > p {
+        margin: 0;
+      }
+    }
+    .container--page-menu,
+    .container--filter-button {
+      align-items: stretch;
+    }
+    .flex-end {
+      justify-content: flex-end;
+    }
+  }
+  .button--filter,
+  .button--page-menu {
+    align-items: center;
+    background-color: $brand-primary-darker;
+    border-radius: 0;
+    color: $white;
+    display: flex;
+    font-weight: bold;
+    line-height: 1;
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 15px 25px;
+    .fas {
+      margin-right: 5px;
+    }
+  }
+  .button--filter {
+    display: block;
+  }
+}
+
+// >= Large
+
+@media screen and (min-width: $screen-lg-min) {
+  #block-exposedformtogglebutton--2,
+  .mobile-toolbar {
+    display: none;
+  }
+}

@@ -1,0 +1,78 @@
+/**
+ * Card styling
+ */
+
+.card {
+  @include box-shadow;
+  align-items: stretch;
+  background: $white;
+  border-radius: 0;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  &:hover {
+    .card--thumb {
+      img {
+        opacity: 0.6;
+        transform: scale(1.1);
+      }
+    }
+  }
+  .card--thumb {
+    border-radius: 0;
+    background: $white;
+    overflow: hidden;
+    a::after {
+      display: none;
+      // height: 0;
+      // This removes the blank line under the image when a view is in a content region.
+    }
+    img {
+      @include transitions;
+      width: 100%;
+    }
+  }
+  .card--content {
+    background: $white;
+    border-radius: 0;
+    flex-direction: column;
+    padding: 20px 15px;
+    p {
+      line-height: 1.5em;
+    }
+    .card--title {
+      font-size: 1.2em;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0;
+      padding: 0 0 10px 0;
+      a:hover {
+        text-decoration: none;
+      }
+    }
+    .card--date {
+      font-size: 12px;
+      margin-bottom: 10px;
+      .fa {
+        margin-right: 5px;
+      }
+    }
+  }
+  .card--content,
+  .card--title {
+    display: flex;
+    flex: 1 0 auto;
+  }
+}
+
+// Breakpoints
+
+@media screen and (max-width: $screen-xs-max) {
+  .card {
+    .card--title {
+      flex: 0;
+      padding: 0;
+    }
+  }
+}

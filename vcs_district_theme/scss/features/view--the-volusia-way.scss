@@ -1,0 +1,42 @@
+/**
+ * view--the-volusia-way.scss
+ *
+ * Defines properties for the Volusia Way page.
+ */
+
+.view-the-volusia-way {
+  .card,
+  .content,
+  .field-content,
+  .list-unstyled,
+  .views-field-nothing {
+    display: flex;
+  }
+  .pagination {
+    margin: 0;
+  }
+  .list-unstyled {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .content {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .card {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+    .card__content,
+    .card__title {
+      display: flex;
+      flex: 1 0 auto;
+    }
+    .card__content {
+      flex-direction: column;
+    }
+    .card__date {
+      margin-bottom: 10px;
+    }
+  }
+}

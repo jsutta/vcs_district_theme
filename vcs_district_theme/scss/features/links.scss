@@ -1,0 +1,262 @@
+/**
+ * layout.scss
+ *
+ * Defines general properties used throughout the website that are independent
+ * of specific features.
+ */
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: $link-color-darker;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: dotted;
+    outline-width: 2px;
+  }
+}
+#main-content {
+  float: left;
+}
+.container--resources,
+.container--top-stories {
+  .view-footer {
+    a {
+      margin: 10px 0 0 0;
+    }
+  }
+}
+.region-featured-pages,
+.region-top-stories,
+.region-featured-video,
+.district-calendar,
+.district-events,
+.content-section,
+.region-content {
+  a,
+  a:active,
+  a:focus {
+    color: $link-color;
+  }
+  a:visited {
+    color: $link-color-darker;
+  }
+  a.btn,
+  a.btn:active,
+  a.btn:focus,
+  a.btn:visited {
+    color: $white;
+  }
+}
+.embedded-entity a:hover::after {
+  width: 0;
+}
+
+// Styling for links (including hover effect; not links styled as buttons)
+
+#block-iwantto a,
+.breadcrumb a,
+.card--list a,
+.dropdown-toggle .dropdown-menu li > a,
+.gsc-cursor-page,
+.h2-layout a,
+.basic-page a,
+.node a,
+.page a,
+.region-content a,
+.taxonomy--description a,
+.view-article-tags a,
+.view-project-bids-documents a,
+.view-school-board-and-superintendent a,
+.view-school-maps a,
+.view-school-pages-menu a,
+.view-swc-inspection-and-permits a,
+.view--article-tags a,
+.wrapper--main-footer li > a {
+  position: relative;
+  text-decoration: none;
+  &:before {
+    background-color: $brand-primary;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    transition: all .3s cubic-bezier(.55, .085, 0, .99);
+    width: 0;
+  }
+  &:focus,
+  &:hover {
+    &:before {
+      left: 0;
+      opacity: 1;
+      width: 100%;
+    }
+  }
+}
+.block-views-blockdepartment-resource-links-block-1 a,
+.links--back a,
+.menu--main li > ul.dropdown-menu li > a,
+.menu--main li > a,
+.menu--top-toolbar li > ul.dropdown-menu li > a,
+.menu--top-toolbar li > a,
+.region-resources .content a,
+.view-articles-by-tag-name .view-header a,
+.view-calendar a,
+.view-department-list a,
+.view-department-resource-links a,
+.view-department-subsite-menu a,
+.view-footer a,
+.view-footer--top-stories--footer a,
+.view-related-departments a,
+.view-related-links a,
+.view-schools a {
+  position: relative;
+  text-decoration: none;
+  & > .link-text {
+    display: inline;
+    line-height: 1.4;
+    position: relative;
+    text-decoration: none;
+    &:before {
+      background-color: $brand-primary;
+      bottom: 0;
+      content: "";
+      height: 2px;
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      transition: all .3s cubic-bezier(.55, .085, 0, .99);
+      width: 0;
+    }
+  }
+  &:focus,
+  &:hover {
+    .link-text:before {
+      left: 0;
+      opacity: 1;
+      width: 100%;
+    }
+  }
+  .fa-angle-double-left,
+  .fa-angle-double-right {
+    color: $brand-primary;
+  }
+  .fa-angle-double-left {
+    margin-right: 3px;
+  }
+  .fa-angle-double-right {
+    margin-left: 3px;
+  }
+}
+.menu--main li > ul.dropdown-menu li > a,
+.menu--main li > a,
+.menu--top-toolbar li > ul.dropdown-menu li > a,
+.menu--top-toolbar li > a {
+  display: block;
+}
+.breadcrumb {
+  a,
+  a:hover {
+    color: $white;
+    &:before {
+      background-color: $white;
+    }
+  }
+}
+.menu--top-toolbar li > ul.dropdown-menu li > a span.link-text,
+.menu--top-toolbar li > a span.link-text {
+  line-height: 20px;
+}
+
+// Styling for sidebar menus (including hover effect)
+
+.block-views-blockdepartment-resource-links-block-1,
+.view-department-resource-links,
+.view-school-pages-menu,
+.view-department-subsite-menu,
+.view-related-departments,
+.view-related-links {
+  a,
+  a.current {
+    border-bottom: 1px solid #eee;
+    display: block;
+    padding: 10px 5px;
+    position: relative;
+    text-decoration: none;
+    &:after {
+      color: $brand-primary;
+      content: '\f105';
+      font-family: "Font Awesome 5 Free";
+      font-size: 1em;
+      font-size: 20px;
+      font-weight: 600;
+      margin-left: 5px;
+      position: relative;
+      top: 3px;
+      transition: all 500ms ease;
+    }
+    &:hover::after {
+      margin-left: 15px;
+    }
+  }
+  .view-header {
+    .field--name-name {
+      display: inline-block;
+    }
+  }
+}
+
+// Formatting for view headers and footers
+
+.view-articles-by-tag-name {
+  .view-header {
+    a {
+      font-weight: bold;
+      margin: 0;
+      text-transform: uppercase;
+      // .fas {
+      //   color: $brand-primary;
+      //   margin-left: 5px;
+      // }
+    }
+  }
+}
+.container--calendar,
+.container--resources,
+.view-the-volusia-way,
+.view-urgent-updates {
+  .view-footer {
+    margin-top: 20px;
+    a {
+      font-weight: bold;
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+.links--back {
+  .link-text {
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+// Breakpoints
+
+// <= Extra Small
+
+@media screen and (max-width: $screen-xs-max) {
+  .card .content-section a.field--name-field-featured-link,
+  .content-section .card a.field--name-field-featured-link,
+  .content-section a.btn,
+  .nav-tabs li a,
+  .pager li a {
+    margin-top: 0;
+  }
+}

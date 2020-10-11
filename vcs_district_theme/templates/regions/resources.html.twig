@@ -1,0 +1,8 @@
+{# Departments/Resources list - Audience pages #}
+{% if page.resources %}
+  <div class="container--resources">
+    {% block resources %}
+      {{ page.resources }}
+    {% endblock %}
+  </div>
+{% endif %}

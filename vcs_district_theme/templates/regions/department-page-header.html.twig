@@ -1,0 +1,17 @@
+{# Basic Department Page - Header #}
+<div class="container-fluid">
+  <div class="row">
+    <div class="department-header">
+      {% if page.department_header %}
+        {% block department_header %}
+          {{ page.department_header }}
+        {% endblock %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% if page.breadcrumbs %}
+  {% block breadcrumbs %}
+    {{ page.breadcrumbs }}
+  {% endblock %}
+{% endif %}

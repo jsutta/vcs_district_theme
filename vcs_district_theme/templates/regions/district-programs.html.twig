@@ -1,0 +1,18 @@
+{# District Programs #}
+<div class="container-fluid">
+  <section class="row content-section-w">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          {% if page.programs %}
+            <div class="container--programs">
+              {% block programs %}
+                {{ page.programs }}
+              {% endblock %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

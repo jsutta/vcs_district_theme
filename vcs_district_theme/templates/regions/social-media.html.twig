@@ -1,0 +1,34 @@
+{# Social Media feeds - Home page #}
+<section class="wrapper--social-media col-md-4 col-sm-6 col-xs-12">
+  <div class="container--social-media">
+    <h2 class="h2-layout">Connect With Us</h2>
+    <div class="card social-media">
+      <div>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active nav-tab--facebook">
+            <a href="#facebook" aria-controls="facebook" role="tab" data-toggle="tab">
+              <span class="fab fa-facebook-f fa-2x"></span>
+            </a>
+          </li>
+          <li role="presentation" class="nav-tab--twitter">
+            <a href="#twitter" aria-controls="twitter" role="tab" data-toggle="tab">
+              <span class="fab fa-twitter fa-2x"></span>
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="facebook">
+            {% block social_media__facebook %}
+              {{ page.social_media__facebook }}
+            {% endblock %}
+          </div>
+          <div role="tabpanel" class="tab-pane" id="twitter">
+            {% block social_media__twitter %}
+              {{ page.social_media__twitter }}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

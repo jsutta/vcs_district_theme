@@ -1,0 +1,13 @@
+{# Home Page Slideshow #}
+{% if page.home_page_slideshow %}
+  <section class="wrapper--slideshow col-md-8 col-xs-12">
+    <div class="container--slideshow--home-page">
+      <span class="sr-only">Home Page Slideshow</span>
+      {% if page.home_page_slideshow %}
+        {% block home_page_slideshow %}
+          {{ page.home_page_slideshow }}
+        {% endblock %}
+      {% endif %}
+    </div>
+  </section>
+{% endif %}

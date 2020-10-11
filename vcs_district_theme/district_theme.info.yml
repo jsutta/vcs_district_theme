@@ -1,0 +1,55 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: 'VCS District Theme'
+description: 'Theme for the district website.'
+package: 'Bootstrap'
+
+regions:
+  # Site Header
+  announcements: 'Announcements'
+  top_toolbar: 'Top Toolbar'
+  main_navigation: 'Main Navigation'
+  main_navigation__mobile: 'Main Navigation - Mobile'
+  search_area: 'Search Area'
+  # Page Header
+  page_header: 'Page Header'
+  subsite_header: 'Subsite Header'
+  breadcrumbs: 'Breadcrumbs'
+  # Content area
+  ad_space: 'Ad Space'
+  calendar: 'Calendar'
+  content: 'Content'
+  content_views: 'Content - Views'
+  featured_pages: 'Featured Pages'
+  featured_video: 'Featured Video'
+  help: 'Help'
+  highlights: 'Highlights'
+  home_page_slideshow: 'Home Page Slideshow'
+  programs: 'Programs'
+  resources: 'Resources'
+  school_board_and_superintendent: 'School Board and Superintendent'
+  social_media__facebook: 'Social Media - Facebook'
+  social_media__twitter: 'Social Media - Twitter'
+  top_stories: 'Top Stories'
+  # Sidebar
+  filters: 'Filters'
+  left_sidebar: 'Left Sidebar'
+  # Footer
+  footer: 'Footer'
+
+libraries-extend:
+  bootstrap/framework:
+    - district_theme/framework
+
+libraries:
+  - district_theme/animate
+  - district_theme/google-adsense
+  - district_theme/google-cse
+  - district_theme/masonry-js
+  - district_theme/monsido
+  - district_theme/userway
+
+ckeditor_stylesheets:
+  - css/style.css

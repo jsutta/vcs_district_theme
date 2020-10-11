@@ -1,0 +1,34 @@
+/**
+ * view--newsroom.scss
+ *
+ * Defines properties for the Newsroom page.
+ */
+
+.view-articles-by-tag-name {
+  .list-unstyled,
+  .list-unstyled > li,
+  .card {
+    display: flex;
+  }
+  .list-unstyled {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+  .pager li {
+    & > a {
+      @extend .btn;
+      background-color: $link-color;
+      height: auto;
+      width: auto;
+    }
+    & > span {
+      background-color: transparent;
+      border: 0;
+      padding: 0;
+    }
+  }
+}

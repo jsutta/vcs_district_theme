@@ -1,0 +1,22 @@
+{% set title = label|render|striptags %}
+
+<div class="card" {{ attributes }}>
+  {# Card Thumbnail #}
+  {% if content.field_image__static_card %}
+    <div class="card--thumb">
+      {% if content.field_image__static_card|render %}
+        {{ content.field_image__static_card }}
+      {% else %}
+        <img src="/sites/default/files/global-images/apple-blur_thumb.jpg" class="img-responsive" alt="">
+      {% endif %}
+    </div>
+  {% endif %}
+  {# Card Content #}
+  <div class="card--content">
+    <h2 class="h2-layout">{{ title }}</h2>
+    {{ content.body }}
+    <span class="wrapper--learn-more-button">
+      <a href="{{ content.field_link.0['#url'] }}" class="btn btn-primary">Learn More</a>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+{# Top Stories #}
+{% if page.top_stories %}
+  <section class="col-xs-12 container--top-stories">
+    {% block top_stories %}
+      {{ page.top_stories }}
+    {% endblock %}
+  </section>
+{% endif %}

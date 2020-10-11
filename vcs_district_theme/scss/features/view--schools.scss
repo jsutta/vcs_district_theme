@@ -1,0 +1,48 @@
+/**
+ * view--schools-list.scss
+ *
+ * Defines properties for the Schools page.
+ */
+
+.view-schools {
+  .h2-layout {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 20px 15px;
+    padding-top: 0;
+  }
+  .card,
+  .field-content,
+  .list-unstyled,
+  .list-unstyled > li,
+  .views-field-nothing {
+    display: flex;
+  }
+  .list-unstyled {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card {
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+    .card--content,
+    .card--title {
+      display: flex;
+    }
+    .card--content {
+      flex: 1 0 auto;
+      flex-direction: column;
+      ul li a {
+        overflow-wrap: anywhere;
+      }
+      .fa-ul {
+        margin-left: 1.5em;
+      }
+      .school-contact-info {
+        display: flex;
+        flex: 1 0 auto;
+      }
+    }
+  }
+}

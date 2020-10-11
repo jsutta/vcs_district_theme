@@ -1,0 +1,104 @@
+/**
+ * Form styles
+ */
+
+// Checkboxes/radio buttons.
+
+.checkbox,
+.radio {
+  /*
+    Remove top/bottom margins when in table context, because this is most
+    likely a tableselect checkbox element.
+  */
+  table &.form-no-label {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+/**
+ * Browsers do not recognize pseudo :after selectors, we must create a
+ * wrapper around the select element to style it properly.
+ *
+ * @see https://stackoverflow.com/questions/21103542/pseudo-elements-and-select-tag
+ */
+
+.select-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  .form-inline & {
+    width: auto;
+  }
+  .input-group & {
+    display: table-cell;
+    // Reset rounded corners
+    &:first-child .form-control:first-child {
+      @include border-left-radius($border-radius-base);
+    }
+    &:last-child .form-control:first-child {
+      @include border-right-radius($border-radius-base);
+    }
+  }
+  select {
+    line-height: 1;
+    padding-right: 2em;
+  }
+  &:after {
+    .has-error & {
+      color: $state-danger-text;
+    }
+    .has-success & {
+      color: $state-success-text;
+    }
+    .has-warning & {
+      color: $state-warning-text;
+    }
+  }
+}
+
+/**
+ * Use CSS/SVG image for required mark.
+ * @see https://www.drupal.org/node/2152217
+ * @see https://www.drupal.org/node/2274631
+ */
+
+.form-required:after {
+  background-image: url(../images/required.svg);
+  background-size: 10px 7px;
+  content:"";
+  display: inline-block;
+  height: 7px;
+  line-height:1;
+  width: 10px;
+}
+
+// Form action buttons
+
+.form-actions {
+  .btn,
+  .btn-group {
+    margin-right: 10px;
+  }
+  .btn-group {
+    .btn {
+      margin-right: 0;
+    }
+  }
+}
+
+// Set label and field widths
+
+form[id^='views-'] {
+  width: 100%;
+}
+form[id^='views-'] div {
+  width: 100%;
+}
+form[id^='views-'] .form-item label {
+  width: 95%;
+}
+form[id^='views-'] .form-item input[type='text'],
+form[id^='views-'] .form-item select {
+  width: 95%;
+}

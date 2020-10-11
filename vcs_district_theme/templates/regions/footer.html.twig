@@ -1,0 +1,28 @@
+{# Footer #}
+{% if page.footer %}
+  {% block footer %}
+    <footer class="wrapper--main-footer">
+      <div class="container-fluid">
+        {# Footer content #}
+        <div class="row main-footer">
+          <div class="col-xs-12">
+            {{ page.footer }}
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        {# Copyright #}
+        <div class="row footer-copyright">
+          <div class="col-xs-12 text-center">
+            <small>
+              Copyright ©
+              {{ "now"|date("Y") }}
+              The School District of Volusia County. All rights reserved.
+            </small>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="spectar"></div>
+  {% endblock %}
+{% endif %}

@@ -1,0 +1,15 @@
+{# Calendar #}
+{% if page.calendar %}
+<section class="wrapper--calendar col-md-4 col-xs-12">
+  <div class="container--calendar">
+    <h2 class="h2-layout">Calendar</h2>
+    <div class="card">
+      {% block calendar %}
+      <div class="card--content">
+        {{ page.calendar }}
+      </div>
+      {% endblock %}
+    </div>
+  </div>
+</section>
+{% endif %}

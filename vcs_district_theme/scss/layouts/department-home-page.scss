@@ -1,0 +1,15 @@
+/**
+ * department-home-page.scss
+ *
+ * Defines properties for the Volusia Way page.
+ */
+
+.view-department-subsite-home-page {
+  margin-bottom: 20px;
+  .taxonomy--description {
+    h2:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
